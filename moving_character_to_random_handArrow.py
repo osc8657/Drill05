@@ -1,7 +1,7 @@
 from pico2d import *
 import random
 
-TUK_WIDTH, TUK_HEIGHT = 640, 512
+TUK_WIDTH, TUK_HEIGHT = 1280, 1024
 open_canvas(TUK_WIDTH, TUK_HEIGHT)
 
 TUK_ground = load_image('TUK_GROUND.png')
@@ -21,6 +21,7 @@ def move_events(p1, p2, i):
 
     pass
 
+
 running = True
 x, y = TUK_WIDTH // 2, TUK_HEIGHT // 2
 frame = 0
@@ -32,6 +33,7 @@ while running:
         clear_canvas()
 
         for ii in range(0, 100+1, 1):
+
             TUK_ground.draw(TUK_WIDTH // 2, TUK_HEIGHT // 2)
             hand_arrow.draw(points[i + 1][0], points[i + 1][1])
             if(points[i][0] <= points[i+1][0]):
@@ -41,6 +43,7 @@ while running:
 
             update_canvas()
             move_events(points[i], points[i+1], ii)
+
             frame = (frame + 1) % 8
             delay(0.01)
 
